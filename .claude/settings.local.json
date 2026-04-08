@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:peihua841017.wixsite.com)",
+      "WebSearch",
+      "WebFetch(domain:kagawomin.wixsite.com)",
+      "WebFetch(domain:acac-aomori.jp)",
+      "WebFetch(domain:yushuanglee.medium.com)",
+      "Bash(xxd \"d:/Desktop/code測試/work2.html\")",
+      "Bash(git -C \"d:/Desktop/code測試\" remote -v)"
+    ]
+  }
+}

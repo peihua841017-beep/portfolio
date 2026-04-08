@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>暫時的安排 Arrangement in Passing | Pei Hua</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/work-detail.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400&family=Noto+Sans+TC:wght@300;400&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <header class="detail-header">
+    <a href="index.html" class="back-link" id="backToWorks">&larr;</a>
+    <button class="lang-toggle" id="langToggleDetail">EN</button>
+  </header>
+
+  <main class="work-detail">
+    <!-- 1. 主圖 -->
+    <div class="work-hero">
+      <img src="images/works/work8.JPG" alt="暫時的安排" style="width: 100%;">
+    </div>
+
+    <!-- 2. 作品資訊 -->
+    <div class="work-info">
+      <h1 data-zh="暫時的安排" data-en="Arrangement in Passing">暫時的安排</h1>
+      <p class="work-year">2023</p>
+      <p class="work-medium" data-zh="手繪塗鴉輸出於薄布、未燒結陶土" data-en="Hand-drawn print on thin fabric, unfired clay">手繪塗鴉輸出於薄布、未燒結陶土</p>
+    </div>
+
+    <!-- 3. 作品描述 -->
+    <div class="work-description">
+      <div data-zh="這件作品發生於戶外空間。" data-en="This work takes place in an outdoor setting.">
+        <p>這件作品發生於戶外空間。</p>
+      </div>
+
+      <div class="work-spaced" data-zh="我將手繪塗鴉輸出於薄布並懸掛於林間，影像便隨風與光的變化而持續改變其顯現方式。用碎石子集成小丘，散置於地面與樹幹上的是我以陶土手捏出的手、果實、人等形體。這些物件並未被燒結，隨著時間與天氣逐漸改變，甚至消失。在經歷降雨而融解之後，它們被再次補充。" data-en="A hand-drawn image is printed onto a thin fabric and suspended among trees, allowing its appearance to continuously shift with changes in light and wind. A small mound is formed from gravel, while hand-shaped clay forms—hands, fruits, and figures—are placed across the ground and on a tree trunk.
+
+These objects are unfired and remain unfixed; they gradually change over time and weather, and may eventually disappear. After being dissolved by rain, they are reintroduced.">
+        <p>我將手繪塗鴉輸出於薄布並懸掛於林間，影像便隨風與光的變化而持續改變其顯現方式。用碎石子集成小丘，散置於地面與樹幹上的是我以陶土手捏出的手、果實、人等形體。這些物件並未被燒結，隨著時間與天氣逐漸改變，甚至消失。在經歷降雨而融解之後，它們被再次補充。</p>
+      </div>
+    </div>
+
+    <!-- 4. 橫向圖片捲動 -->
+    <div class="filmstrip" id="filmstrip">
+      <button class="filmstrip-arrow filmstrip-prev" id="filmPrev">&lsaquo;</button>
+      <div class="filmstrip-wrapper" id="filmWrapper">
+        <div class="filmstrip-track" id="filmTrack">
+          <img src="images/works/work8-1.JPG" alt="暫時的安排 1" class="filmstrip-img">
+          <img src="images/works/work8-2.JPG" alt="暫時的安排 2" class="filmstrip-img">
+          <img src="images/works/work8-3.JPG" alt="暫時的安排 3" class="filmstrip-img">
+          <img src="images/works/work8-4.JPG" alt="暫時的安排 4" class="filmstrip-img">
+          <img src="images/works/work8-5.JPG" alt="暫時的安排 5" class="filmstrip-img">
+          <img src="images/works/work8-6.JPG" alt="暫時的安排 6" class="filmstrip-img">
+          <img src="images/works/work8-7.JPG" alt="暫時的安排 7" class="filmstrip-img">
+          <img src="images/works/work8-8.JPG" alt="暫時的安排 8" class="filmstrip-img">
+          <img src="images/works/work8-10.JPG" alt="暫時的安排 10" class="filmstrip-img">
+        </div>
+      </div>
+      <button class="filmstrip-arrow filmstrip-next" id="filmNext">&rsaquo;</button>
+    </div>
+
+    <!-- 單張圖片 -->
+    <div class="work-gallery" style="margin-top: 8rem;">
+      <img src="images/works/work8-9.jpg" alt="暫時的安排" style="width: 60%; display: block; margin: 0 auto;">
+    </div>
+  </main>
+
+  <!-- 全螢幕圖片檢視 -->
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-close" id="lightboxClose">&times;</button>
+    <img src="" alt="" id="lightboxImg">
+  </div>
+
+  <script src="js/main.js"></script>
+  <script>
+    // 返回作品頁
+    document.getElementById('backToWorks').addEventListener('click', function(e) {
+      e.preventDefault();
+      window.location.href = 'index.html?page=works';
+    });
+
+    // ===== 橫向捲動 =====
+    const filmWrapper = document.getElementById('filmWrapper');
+    const filmTrack = document.getElementById('filmTrack');
+    const filmPrev = document.getElementById('filmPrev');
+    const filmNext = document.getElementById('filmNext');
+    const scrollStep = 400;
+
+    function updateFilmArrows() {
+      const maxScroll = filmWrapper.scrollWidth - filmWrapper.clientWidth;
+      filmPrev.style.opacity = filmWrapper.scrollLeft <= 0 ? '0' : '';
+      filmPrev.style.pointerEvents = filmWrapper.scrollLeft <= 0 ? 'none' : '';
+      filmNext.style.opacity = filmWrapper.scrollLeft >= maxScroll - 1 ? '0' : '';
+      filmNext.style.pointerEvents = filmWrapper.scrollLeft >= maxScroll - 1 ? 'none' : '';
+    }
+
+    filmPrev.addEventListener('click', () => {
+      filmWrapper.scrollBy({ left: -scrollStep, behavior: 'smooth' });
+    });
+
+    filmNext.addEventListener('click', () => {
+      filmWrapper.scrollBy({ left: scrollStep, behavior: 'smooth' });
+    });
+
+    filmWrapper.addEventListener('scroll', updateFilmArrows);
+    updateFilmArrows();
+
+    // ===== 點擊圖片放大 =====
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightboxImg');
+
+    document.querySelectorAll('.work-hero img, .filmstrip-img').forEach(img => {
+      img.style.cursor = 'pointer';
+      img.addEventListener('click', () => {
+        lightboxImg.src = img.src;
+        lightbox.classList.add('active');
+      });
+    });
+
+    document.getElementById('lightboxClose').addEventListener('click', () => {
+      lightbox.classList.remove('active');
+    });
+
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) lightbox.classList.remove('active');
+    });
+  </script>
+</body>
+</html>

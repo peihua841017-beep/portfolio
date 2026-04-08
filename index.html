@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pei Hua</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400&family=Noto+Sans+TC:wght@300;400&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- ===== HERO / 首頁 ===== -->
+  <section id="hero">
+    <div class="hero-media">
+      <video autoplay muted loop playsinline>
+        <source src="images/hero.mp4" type="video/mp4">
+      </video>
+    </div>
+
+    <a href="#" class="hero-enter" id="heroEnter" data-page="works">Enter</a>
+
+    <nav class="hero-nav">
+      <div class="nav-left"></div>
+      <div class="nav-right">
+        <a href="#" class="nav-link" data-page="about" data-zh="關於" data-en="About">關於</a>
+        <button class="lang-toggle" id="langToggle">EN</button>
+      </div>
+    </nav>
+  </section>
+
+  <!-- ===== WORKS / 作品 ===== -->
+  <section id="works" class="page-section" hidden>
+    <header class="section-header">
+      <a href="#" class="back-home">&larr;</a>
+      <nav class="section-nav">
+        <a class="nav-link" data-page="texts" data-zh="隨筆" data-en="Fragments">隨筆</a>
+        <a class="nav-link practice-link" data-zh="練習" data-en="ongoing practice">練習</a>
+        <a class="nav-link" data-page="about" data-zh="關於" data-en="About">關於</a>
+        <button class="lang-toggle">EN</button>
+      </nav>
+    </header>
+
+    <div class="constellation" id="constellation">
+      <div class="constellation-inner">
+        <a href="work1.html" class="star" style="--x: 20; --y: 15;">
+          <img src="images/works/work1-thumb.jpg.jpg" alt="作品一">
+          <span class="star-title" data-zh="" data-en="Dongmen Tulips"></span>
+        </a>
+
+        <a href="work2.html" class="star" style="--x: 52; --y: 21;">
+          <img src="images/works/work2-thumb.jpg.JPG" alt="作品二" style="max-width: 198px !important;">
+          <span class="star-title" data-zh="" data-en="Elsewhere"></span>
+        </a>
+
+        <a href="work3.html" class="star" style="--x: 72; --y: 32;">
+          <img src="images/works/work3-thumb.jpg.jpg" alt="作品三">
+          <span class="star-title" data-zh="" data-en="I put a mimicry pet in the woods..."></span>
+        </a>
+
+        <a href="work4.html" class="star" style="--x: 10; --y: 54;">
+          <img src="images/works/work4-thumb.jpg.jpg" alt="作品四">
+          <span class="star-title" data-zh="" data-en="Puzzle"></span>
+        </a>
+
+        <a href="work5.html" class="star" style="--x: 36; --y: 57;">
+          <img src="images/works/work5-thumb.jpg.jpg" alt="作品五" style="max-width: 220px !important;">
+          <span class="star-title" data-zh="" data-en="Nighttime Forest"></span>
+        </a>
+
+        <a href="work6.html" class="star" style="--x: 58; --y: 75;">
+          <img src="images/works/work6-thumb.jpg.JPG" alt="作品六" style="max-width: 218px !important;">
+          <span class="star-title" data-zh="" data-en="Where Wind Passes Through Stone"></span>
+        </a>
+
+        <a href="work7.html" class="star" style="--x: 20; --y: 105;">
+          <img src="images/works/work7-thumb.jpg.JPG" alt="作品七">
+          <span class="star-title" data-zh="" data-en="Singing"></span>
+        </a>
+
+        <a href="work8.html" class="star" style="--x: 42; --y: 115;">
+          <img src="images/works/work8-thumb.jpg.JPG" alt="作品八">
+          <span class="star-title" data-zh="" data-en="Arrangement in Passing"></span>
+        </a>
+
+        <a href="work9.html" class="star" style="--x: 78; --y: 94;">
+          <img src="images/works/work9-thumb.jpg.JPG" alt="作品九">
+          <span class="star-title" data-zh="" data-en="57 Mnemosyne"></span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TEXTS / 文章 ===== -->
+  <section id="texts" class="page-section" hidden>
+    <header class="section-header">
+      <a href="#" class="back-home">&larr;</a>
+      <nav class="section-nav">
+        <a class="nav-link" data-page="works" data-zh="路徑" data-en="Path">路徑</a>
+        <a class="nav-link active" data-page="texts" data-zh="隨筆" data-en="Fragments">隨筆</a>
+        <a class="nav-link practice-link" data-zh="練習" data-en="ongoing practice">練習</a>
+        <a class="nav-link" data-page="about" data-zh="關於" data-en="About">關於</a>
+      </nav>
+      <button class="lang-toggle">EN</button>
+    </header>
+
+    <!-- 圖片列表 -->
+    <div class="fragments-list">
+      <div class="fragment-item" data-action="overlay" data-target="fragment1Overlay">
+        <img src="images/隨筆圖片/7.JPG" alt="">
+      </div>
+      <div class="fragment-item" data-action="overlay" data-target="fragment2Overlay">
+        <img src="images/隨筆圖片/6.jpg" alt="">
+      </div>
+      <div class="fragment-item" data-action="lightbox">
+        <img src="images/隨筆圖片/3.jpg" alt="">
+      </div>
+      <div class="fragment-item" data-action="lightbox">
+        <img src="images/隨筆圖片/2.jpg" alt="">
+      </div>
+      <div class="fragment-item" data-action="lightbox">
+        <img src="images/隨筆圖片/1.jpg" alt="">
+      </div>
+    </div>
+
+    <!-- 隨筆圖片放大檢視 -->
+    <div class="fragment-viewer" id="fragmentViewer">
+      <button class="fragment-viewer-close" id="fragmentViewerClose">&times;</button>
+      <div class="fragment-viewer-content" id="fragmentContent"></div>
+    </div>
+
+    <!-- 圖7 overlay -->
+    <div class="fragment-overlay" id="fragment1Overlay" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:var(--bg); z-index:100; overflow-y:auto;">
+      <button class="fragment-overlay-close" onclick="document.getElementById('fragment1Overlay').style.display='none'" style="position:fixed; top:2rem; right:3rem; background:none; border:none; font-size:1.5rem; cursor:pointer; color:var(--text); z-index:101;">&times;</button>
+      <div style="max-width:600px; margin:0 auto; padding:5rem 2rem; text-align:center;">
+        <img src="images/隨筆圖片/7.JPG" alt="" style="max-width:100%;">
+        <p style="margin-top:0.8rem; font-size:0.8rem; color:var(--text-light);" data-zh="紙的遊戲" data-en="A Game with Paper">紙的遊戲</p>
+      </div>
+    </div>
+
+    <!-- 圖6 overlay -->
+    <div class="fragment-overlay" id="fragment2Overlay" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:var(--bg); z-index:100; overflow-y:auto;">
+      <button class="fragment-overlay-close" onclick="document.getElementById('fragment2Overlay').style.display='none'" style="position:fixed; top:2rem; right:3rem; background:none; border:none; font-size:1.5rem; cursor:pointer; color:var(--text); z-index:101;">&times;</button>
+      <div style="max-width:600px; margin:0 auto; padding:5rem 2rem; text-align:center;">
+        <img src="images/隨筆圖片/6.jpg" alt="" style="max-width:100%;">
+        <p style="margin-top:0.8rem; font-size:0.8rem; color:var(--text-light);" data-zh="摺紙的記憶與他人有關" data-en="The memory of origami is tied to others">摺紙的記憶與他人有關</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ABOUT / 關於 ===== -->
+  <section id="about" class="page-section" hidden>
+    <header class="section-header">
+      <a href="#" class="back-home">&larr;</a>
+      <nav class="section-nav">
+        <a class="nav-link" data-page="works" data-zh="路徑" data-en="Path">路徑</a>
+        <a class="nav-link" data-page="texts" data-zh="隨筆" data-en="Fragments">隨筆</a>
+        <a class="nav-link practice-link" data-zh="練習" data-en="ongoing practice">練習</a>
+        <a class="nav-link active" data-page="about" data-zh="關於" data-en="About">關於</a>
+      </nav>
+      <button class="lang-toggle">EN</button>
+    </header>
+
+    <div class="about-content" style="display: flex; gap: 4rem; max-width: 1100px; margin: 0 auto; text-align: left;">
+      <!-- 左欄：照片 + 創作自述 -->
+      <div class="about-left" style="flex: 1; min-width: 500px;">
+        <!-- 照片 -->
+        <div class="about-block">
+          <img src="images/0-1.jpg" alt="Tsai Pei Hua" style="max-width: 350px; width: 100%; display: block; margin: 0 auto;">
+        </div>
+
+        <!-- Artist Statement -->
+        <div class="about-block" style="max-width: 450px; margin: 0 auto;">
+          <div class="about-text" data-zh="" data-en="Born on a mountainous island in the Pacific Ocean.">
+            <p></p>
+          </div>
+          <div class="about-text" style="margin-top: 1.5rem;" data-zh="我的創作時常從不期而遇的經驗開始，也來自於對環境的觀察與感受，並沿著偶然浮現的線索展開。" data-en="My work often begins with unexpected encounters and arises from observations of, and a sensitivity to, the environment, unfolding along threads that emerge by chance.">
+            <p>我的創作時常從不期而遇的經驗開始，也來自於對環境的觀察與感受，並沿著偶然浮現的線索展開。</p>
+          </div>
+          <div class="about-text" style="margin-top: 1.5rem;" data-zh="它可能是空間中一扇被打開的門、脆弱的東西、一段記憶、一段獨白或一群人在夜裡散步。我以低限度且細膩的方式回應我們當前的位置，這裡的位置既不固定於座標，也不作為一個可被確定的點，而是在回望中浮現。我留意事物如何在時間中改變、消融與離開，去真正的看見。" data-en="It can be an opened door within a space, something fragile, a memory, a monologue, or a group of people walking at night. I respond in subtle and restrained ways to our present position—one that is neither fixed as a coordinate nor defined as a determinate point, but emerges through reflection. I attend to how things change, dissolve, and pass over time, in order to truly see.">
+            <p>它可能是空間中一扇被打開的門、脆弱的東西、一段記憶、一段獨白或一群人在夜裡散步。我以低限度且細膩的方式回應我們當前的位置，這裡的位置既不固定於座標，也不作為一個可被確定的點，而是在回望中浮現。我留意事物如何在時間中改變、消融與離開，去真正的看見。</p>
+          </div>
+          <div class="about-text" style="margin-top: 1.5rem;" data-zh="我嘗試環抱，生命賜予的一切。" data-en="I try to embrace, remaining close to what life offers.">
+            <p>我嘗試環抱，生命賜予的一切。</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 右欄：CV + 聯絡 -->
+      <div class="about-right" style="flex: 1; padding-top: 3rem; padding-left: 1rem;">
+        <div class="about-block">
+          <p style="margin-bottom: 2rem; color: var(--text);"><strong style="font-size: 1.1rem;">蔡沛樺 Tsai, Pei Hua</strong><br><span style="font-size: 0.85rem;">臺灣，1995 / Taiwan, 1995</span></p>
+
+          <div style="font-size: 0.65rem; color: var(--text-light);">
+          <div class="cv-section">
+            <h4 data-zh="個展" data-en="Solo Exhibition">個展</h4>
+            <ul>
+              <li>
+                <span class="cv-year">2022</span>
+                <span data-zh="《小行星57號（原名為願你腦袋空空）》節點，臺南" data-en="&quot;57 Mnemosyne (formerly May your mind be empty)&quot;, Zit-dim art space, Tainan">《小行星57號（原名為願你腦袋空空）》節點，臺南</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="cv-section">
+            <h4 data-zh="聯展" data-en="Group Exhibition">聯展</h4>
+            <ul>
+              <li>
+                <span class="cv-year">2023</span>
+                <span data-zh="《跑攤藝術季》彰化" data-en="&quot;TsauThuann Art Festival&quot;, Changhua City">《跑攤藝術季》彰化</span>
+              </li>
+              <li>
+                <span class="cv-year">2021</span>
+                <span data-zh="《2021跑攤＋1藝術季》彰化" data-en="&quot;TsauThuann +1 Art Festival&quot;, Changhua City">《2021跑攤＋1藝術季》彰化</span>
+              </li>
+              <li>
+                <span class="cv-year">2021</span>
+                <span data-zh="《伸手不見太陽》海馬迴光畫館，臺南" data-en="&quot;When I stretch out my hand I can't see the sun&quot;, Fotoaura Institute of Photography, Tainan City">《伸手不見太陽》海馬迴光畫館，臺南</span>
+              </li>
+              <li>
+                <span class="cv-year">2020</span>
+                <span data-zh="《z美不在家》南藝大造形所第23屆聯展，臺南" data-en="&quot;Z Mei is not at home&quot;, TNNUA Plastic Arts 23th group exhibition, Tainan">《z美不在家》南藝大造形所第23屆聯展，臺南</span>
+              </li>
+              <li>
+                <span class="cv-year">2019</span>
+                <span data-zh="《Loooop》夜間聯展，國立臺南藝術大學，臺南" data-en="&quot;Loooop&quot;, TNNUA, Tainan">《Loooop》夜間聯展，國立臺南藝術大學，臺南</span>
+              </li>
+              <li>
+                <span class="cv-year">2019</span>
+                <span data-zh="《愛情神話》藝術自由日，松山文創園區，台北" data-en="&quot;LOVE&quot;, Free Arts Fair, Song Shan Cultural and Creative Park, Taipei">《愛情神話》藝術自由日，松山文創園區，台北</span>
+              </li>
+              <li>
+                <span class="cv-year">2018</span>
+                <span data-zh="《單身聯誼》臺藝大美術系畢業展，華山文創園，台北" data-en="&quot;Single Friendship&quot; NTUA Fine Arts Graduation Exhibition, Huashan1914, Taipei">《單身聯誼》臺藝大美術系畢業展，華山文創園，台北</span>
+              </li>
+              <li>
+                <span class="cv-year">2018</span>
+                <span data-zh="《大里民活動辦事處》臺藝大美術系系館B1，新北" data-en="&quot;Dalimin event office&quot;, NTUA department of Fine Arts B1 gallery, New Taipei">《大里民活動辦事處》臺藝大美術系系館B1，新北</span>
+              </li>
+              <li>
+                <span class="cv-year">2017</span>
+                <span data-zh="《工作室開放展》臺藝大文創園區紙廠，新北" data-en="&quot;Open Studio&quot;, NTUA Creative Park Paper Factory, New Taipei">《工作室開放展》臺藝大文創園區紙廠，新北</span>
+              </li>
+              <li>
+                <span class="cv-year">2016</span>
+                <span data-zh="《愛─傳遞》壁畫創作年展，朱銘美術館，新北" data-en="&quot;Love．Forward&quot; Mural Creation Annual Exhibition, Juming Museum, New Taipei">《愛─傳遞》壁畫創作年展，朱銘美術館，新北</span>
+              </li>
+              <li>
+                <span class="cv-year">2016</span>
+                <span data-zh="《沒 有 的 事》臺藝大文創園區 紙廠，新北" data-en="&quot;Nothing&quot;, NTUA Creative Park Paper Factory, New Taipei">《沒 有 的 事》臺藝大文創園區 紙廠，新北</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="cv-section">
+            <h4 data-zh="現地創作" data-en="Live Performance/ Action">現地創作</h4>
+            <ul>
+              <li>
+                <span class="cv-year">2020</span>
+                <span data-zh="《節點臨時考》節點，臺南" data-en="&quot;The trap, vibrating!&quot; visual diary vol.4, zit-dim art space, Tainan">《節點臨時考》節點，臺南</span>
+              </li>
+              <li>
+                <span class="cv-year">2018</span>
+                <span data-zh="《東門市場計畫：活化前的游擊駐地行動》東門市場，新竹" data-en="&quot;Dongmen Market Project: Guerrilla resident action before activation&quot;, Dongmen Market, Hsinchu">《東門市場計畫：活化前的游擊駐地行動》東門市場，新竹</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="cv-section">
+            <h4 data-zh="獎項" data-en="Award">獎項</h4>
+            <ul>
+              <li>
+                <span class="cv-year">2020</span>
+                <span data-zh="《世安美學獎》造形藝術類" data-en="&quot;S-An Art Award&quot;, Plastic Arts">《世安美學獎》造形藝術類</span>
+              </li>
+              <li>
+                <span class="cv-year">2015</span>
+                <span data-zh="《未知》臺藝大九單藝術實踐空間啟用聯展，佳作" data-en="Nomination (Group exhibition), &quot;Unknow&quot;, NTUA Nine Room Art Space Opening Group Exhibition">《未知》臺藝大九單藝術實踐空間啟用聯展，佳作</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        </div>
+
+        <!-- Contact -->
+        <div class="about-block" style="margin-top: 2rem;">
+          <h3 data-zh="聯絡" data-en="Contact" style="color: var(--text);">聯絡</h3>
+          <div class="contact-info">
+            <p>Email: <a href="mailto:peihua841017@gmail.com">peihua841017@gmail.com</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 練習 overlay -->
+  <div id="practiceOverlay" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:var(--bg); z-index:100; overflow-y:auto;">
+    <button id="practiceClose" style="position:fixed; top:2rem; right:3rem; background:none; border:none; font-size:1.5rem; cursor:pointer; color:var(--text); z-index:101;">&times;</button>
+    <div style="max-width:700px; margin:0 auto; padding:6rem 3rem 4rem;">
+      <p style="font-weight:400; margin-bottom:2rem;" data-zh="最近我開始拍照。" data-en="I recently began taking photographs."><strong>最近我開始拍照。</strong></p>
+      <p style="margin-bottom:2rem; font-size:0.95rem; line-height:2;" data-zh="來自於生活狀態的改變，也成為我回看自己的一種方式。在拍照的過程中，我暫時成為一名觀察者，與世界保持距離，同時又以另一種方式，親密地投入。" data-en="This shift grows out of my current way of living and has become a way of reflecting on my own &quot;position.&quot; In the process of photographing, I temporarily become an observer, maintaining a distance from the world while at the same time engaging with it in another way—intimately.">來自於生活狀態的改變，也成為我回看自己的一種方式。在拍照的過程中，我暫時成為一名觀察者，與世界保持距離，同時又以另一種方式，親密地投入。</p>
+      <p style="margin-bottom:2rem; font-size:0.95rem; line-height:2;" data-zh="在2025 年的一次實地採訪中，我在花蓮遇到了一對從事有機耕作的夫妻。他們的田裡沒有垂直水平的排列，不澆水也不施肥——他們在想的是：人類在自然中的位置到底是什麼？透過監測，他們僅僅只是在照護土壤，任由萬物自然生長。果實的滋味，嚐起來也特別不同。" data-en="During a field interview in 2025, I encountered a couple practicing organic farming in Hualien. Their field grew without fixed rows. Plants, flowers, and insects emerged freely. They described their approach not as cultivation, but as a form of attending to the soil, raising a question: what is the position of humans within nature?">在2025 年的一次實地採訪中，我在花蓮遇到了一對從事有機耕作的夫妻。他們的田裡沒有垂直水平的排列，不澆水也不施肥——他們在想的是：人類在自然中的位置到底是什麼？透過監測，他們僅僅只是在照護土壤，任由萬物自然生長。果實的滋味，嚐起來也特別不同。</p>
+      <p style="margin-bottom:3rem; font-size:0.95rem; line-height:2;" data-zh="透過觀察與停留，保持開放的狀態，讓事物之間的關係在時間中慢慢浮現。" data-en="Through observation and moments of stillness, relationships slowly come into being over time. This practice does not presuppose a fixed form, but remains an open state of making.">透過觀察與停留，保持開放的狀態，讓事物之間的關係在時間中慢慢浮現。</p>
+      <img src="images/flower.jpg" alt="" style="display:block; max-width:280px; width:100%; margin-left:auto; margin-right:1rem; margin-top:7.5rem;">
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+  <script>
+    // 練習：點擊顯示 HTML overlay
+    const practiceOverlay = document.getElementById('practiceOverlay');
+
+    document.querySelectorAll('.practice-link').forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        practiceOverlay.style.display = 'block';
+        // 重新套用語言
+        setLanguage(currentLang);
+      });
+    });
+
+    document.getElementById('practiceClose').addEventListener('click', () => {
+      practiceOverlay.style.display = 'none';
+    });
+
+    // ===== 隨筆：點擊行為 =====
+    const fragmentViewer = document.getElementById('fragmentViewer');
+    const fragmentContent = document.getElementById('fragmentContent');
+
+    document.querySelectorAll('.fragment-item').forEach(item => {
+      item.addEventListener('click', () => {
+        if (item.dataset.action === 'overlay') {
+          const overlay = document.getElementById(item.dataset.target);
+          overlay.style.display = 'block';
+          setLanguage(currentLang);
+        } else {
+          fragmentContent.innerHTML = '';
+          const img = document.createElement('img');
+          img.src = item.querySelector('img').src;
+          fragmentContent.appendChild(img);
+          fragmentViewer.classList.add('active');
+        }
+      });
+    });
+
+    document.getElementById('fragmentViewerClose').addEventListener('click', () => {
+      fragmentViewer.classList.remove('active');
+    });
+  </script>
+</body>
+</html>

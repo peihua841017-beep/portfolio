@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>隨筆 | Pei Hua</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400&family=Noto+Sans+TC:wght@300;400&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <header class="detail-header">
+    <a href="index.html?page=texts" class="back-link">&larr;</a>
+    <button class="lang-toggle" id="langToggleDetail">EN</button>
+  </header>
+
+  <main style="max-width:600px; margin:0 auto; padding:4rem 2rem;">
+    <div style="text-align:center;">
+      <img src="images/隨筆圖片/7.JPG" alt="" style="max-width:100%;">
+      <p style="margin-top:0.8rem; font-size:0.8rem; color:var(--text-light);" data-zh="紙的遊戲" data-en="A Game with Paper">紙的遊戲</p>
+    </div>
+  </main>
+
+  <script src="js/main.js"></script>
+  <script>
+    document.querySelector('.back-link').addEventListener('click', function(e) {
+      e.preventDefault();
+      window.location.href = 'index.html?page=texts';
+    });
+  </script>
+</body>
+</html>

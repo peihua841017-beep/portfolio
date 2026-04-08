@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>之間 Elsewhere | Pei Hua</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/work-detail.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400&family=Noto+Sans+TC:wght@300;400&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <header class="detail-header">
+    <a href="index.html" class="back-link" id="backToWorks">&larr;</a>
+    <button class="lang-toggle" id="langToggleDetail">EN</button>
+  </header>
+
+  <main class="work-detail">
+    <!-- 作品主圖 -->
+    <div class="work-hero">
+      <img src="images/works/work2-thumb.jpg.JPG" alt="之間 Elsewhere">
+    </div>
+
+    <!-- 作品資訊 -->
+    <div class="work-info">
+      <h1 data-zh="之間" data-en="Elsewhere">之間</h1>
+      <p class="work-year">2018</p>
+      <p class="work-medium" data-zh="人造花，尺寸依場地而定" data-en="Artificial flowers, dimensions variable">人造花，尺寸依場地而定</p>
+    </div>
+
+    <!-- 作品描述 -->
+    <div class="work-description">
+      <div data-zh="華山1914文化創意產業園區，前身為日治時期的清酒工場，在2000年左右轉型為文創園區營運至今。在場勘的過程中，我注意到空間中存在著許多後來增設的結構。這些結構或許出於對建築的保護，也可能作為對歷史痕跡的修飾與覆蓋，進而生成新的展示空間。然而，在劃定實際使用範圍的同時，也劃出無法被使用的畸零地與邊界，推演出一種界外的感受。
+
+由此開始，我回應建築空間本身，以及其作為展覽場域的使用狀態展開工作。
+
+將牆打開，我想像視線穿過狹窄的距離，在兩面牆之間延伸，目光最終停留在花束上。觀者在觀看花的同時，始終與之維持著一段無法完全靠近或佔有的距離，於是距離不再只是空間的間隔，而成為一種緩慢的、無法越過的停留，這種感受並不指向具體的敘事或象徵。
+
+在花的周圍的所有元素，光線、磁磚、灰塵、碎屑和老舊的痕跡，當一切都被納入，如同進入一個尚未被命名的區間。" data-en="At Huashan 1914 Creative Park, I noticed later-added structures that both protect and overwrite existing traces, generating exhibition space while leaving residual, unusable margins. From this point, the work responds to the architecture and its exhibition condition, concerned not only with revealing what was previously hidden, but with how these residual spaces are encountered.
+
+By opening the wall, I imagine a gaze passing through a narrow distance, extending between two walls, and coming to rest on a bouquet. As the viewer looks at the flowers, a distance is maintained—one that cannot be fully crossed or possessed. It shifts from spatial separation into a slow, unbridgeable duration—not pointing toward any specific narrative or symbol.
+
+Around the flowers, light, tiles, dust, debris, and traces of age are drawn into this condition, as if entering a zone not yet named.">
+        <p>華山1914文化創意產業園區，前身為日治時期的清酒工場，在2000年左右轉型為文創園區營運至今。在場勘的過程中，我注意到空間中存在著許多後來增設的結構。這些結構或許出於對建築的保護，也可能作為對歷史痕跡的修飾與覆蓋，進而生成新的展示空間。然而，在劃定實際使用範圍的同時，也劃出無法被使用的畸零地與邊界，推演出一種界外的感受。</p>
+        <p>由此開始，我回應建築空間本身，以及其作為展覽場域的使用狀態展開工作。</p>
+        <p>將牆打開，我想像視線穿過狹窄的距離，在兩面牆之間延伸，目光最終停留在花束上。觀者在觀看花的同時，始終與之維持著一段無法完全靠近或佔有的距離，於是距離不再只是空間的間隔，而成為一種緩慢的、無法越過的停留，這種感受並不指向具體的敘事或象徵。</p>
+        <p>在花的周圍的所有元素，光線、磁磚、灰塵、碎屑和老舊的痕跡，當一切都被納入，如同進入一個尚未被命名的區間。</p>
+      </div>
+    </div>
+
+    <!-- 更多圖片：將作品相關圖片放入 images/works/ 並在此新增 -->
+    <!--
+    <div class="work-gallery">
+      <img src="images/works/work2-detail1.jpg" alt="展場照片">
+      <img src="images/works/work2-detail2.jpg" alt="細節圖">
+    </div>
+    -->
+  </main>
+
+  <script src="js/main.js"></script>
+  <script>
+    // 返回作品頁
+    document.getElementById('backToWorks').addEventListener('click', function(e) {
+      e.preventDefault();
+      window.location.href = 'index.html?page=works';
+    });
+  </script>
+</body>
+</html>

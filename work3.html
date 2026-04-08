@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>我將回聲娃娃放在樹林裡 | Pei Hua</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/work-detail.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400&family=Noto+Sans+TC:wght@300;400&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <header class="detail-header">
+    <a href="index.html" class="back-link" id="backToWorks">&larr;</a>
+    <button class="lang-toggle" id="langToggleDetail">EN</button>
+  </header>
+
+  <main class="work-detail" style="max-width: 100%; padding: 0 3rem;">
+    <!-- 主圖 -->
+    <div class="work-hero" style="margin-bottom: 2rem;">
+      <img src="images/works/work3.JPG" alt="我將回聲娃娃放在樹林裡" style="width: 100%;">
+    </div>
+
+    <!-- 作品資訊 -->
+    <div class="work-info" style="max-width: 900px; margin: 0 auto; padding-top: 3rem;">
+      <h1 style="font-size: 1rem;" data-zh="我將回聲娃娃放在樹林裡，嘗試錄製一段影片，卻不知從何開始與結束" data-en="I put a mimicry pet in the woods and tried to record a video, but couldn't figure out how to start and end it.">我將回聲娃娃放在樹林裡，嘗試錄製一段影片，卻不知從何開始與結束</h1>
+      <p class="work-year">2018</p>
+    </div>
+  </main>
+
+  <script src="js/main.js"></script>
+  <script>
+    document.getElementById('backToWorks').addEventListener('click', function(e) {
+      e.preventDefault();
+      window.location.href = 'index.html?page=works';
+    });
+  </script>
+</body>
+</html>
