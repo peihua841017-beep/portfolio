@@ -437,22 +437,103 @@ img {
     padding: 1.5rem;
   }
 
+  .hero-enter {
+    left: 10%;
+    top: 60%;
+    font-size: 0.9rem;
+  }
+
   .nav-right {
-    gap: 1.2rem;
+    gap: 1rem;
+  }
+
+  .nav-link {
+    font-size: 0.8rem;
   }
 
   .page-section {
-    padding: 0 1.5rem 3rem;
+    padding: 0 1.2rem 3rem;
   }
 
+  .section-header {
+    padding: 1.5rem 0;
+    margin-bottom: 1.5rem;
+  }
+
+  .section-nav {
+    gap: 1rem;
+    margin-right: 1rem;
+  }
+
+  /* ===== 作品星圖 → 手機改為垂直列表 ===== */
   .constellation {
+    height: auto;
+    overflow: visible;
+    cursor: default;
+  }
+
+  .constellation-inner {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     gap: 2rem;
-    padding: 1rem 1.5rem;
+    padding: 1rem 0;
+  }
+
+  .star {
+    position: static;
+    transform: none;
+  }
+
+  .star:hover {
+    transform: scale(1.02);
+  }
+
+  .star img {
+    max-width: 200px;
+    opacity: 0.85;
+  }
+
+  .star-title {
+    display: none;
+  }
+
+  /* ===== 關於頁面 → 手機改為單欄 ===== */
+  .about-content {
+    flex-direction: column !important;
+    gap: 2rem !important;
+    max-width: 100% !important;
+  }
+
+  .about-left {
+    min-width: unset !important;
+  }
+
+  .about-right {
+    padding-top: 0 !important;
+    padding-left: 0 !important;
+  }
+
+  .about-block img {
+    max-width: 250px !important;
   }
 
   .cv-section ul li {
     flex-direction: column;
     gap: 0.2rem;
+    white-space: normal;
+  }
+
+  /* 隨筆 */
+  .fragments-list {
+    gap: 4rem;
+    padding: 2rem 1rem;
+  }
+
+  .fragment-viewer-content {
+    max-width: 95%;
   }
 }
 

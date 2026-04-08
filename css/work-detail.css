@@ -432,10 +432,34 @@
 
 @media (max-width: 768px) {
   .detail-header {
-    padding: 1.5rem;
+    padding: 1.2rem 1.5rem;
   }
 
   .work-detail {
-    padding: 0 1.5rem 4rem;
+    padding: 0 1.2rem 3rem;
+  }
+
+  .work-description p {
+    font-size: 0.9rem;
+  }
+
+  /* 輪播箭頭在手機上隱藏，用觸控滑動 */
+  .carousel-arrow {
+    font-size: 1.8rem;
+    width: 2rem;
+  }
+
+  /* 膠卷圖片縮小 */
+  .filmstrip-img {
+    height: 280px;
+  }
+
+  .filmstrip-arrow {
+    display: none;
+  }
+
+  /* 影片 iframe */
+  .work-description iframe {
+    width: 100% !important;
   }
 }

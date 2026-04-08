@@ -14,7 +14,7 @@
   <!-- ===== HERO / 首頁 ===== -->
   <section id="hero">
     <div class="hero-media">
-      <video autoplay muted loop playsinline>
+      <video autoplay muted loop playsinline preload="auto" id="heroVideo">
         <source src="images/hero.mp4" type="video/mp4">
       </video>
     </div>
@@ -164,7 +164,7 @@
 
     <div class="about-content" style="display: flex; gap: 4rem; max-width: 1100px; margin: 0 auto; text-align: left;">
       <!-- 左欄：照片 + 創作自述 -->
-      <div class="about-left" style="flex: 1; min-width: 500px;">
+      <div class="about-left" style="flex: 1; min-width: 0;">
         <!-- 照片 -->
         <div class="about-block">
           <img src="images/0-1.jpg" alt="Tsai Pei Hua" style="max-width: 350px; width: 100%; display: block; margin: 0 auto;">
@@ -308,6 +308,18 @@
 
   <script src="js/main.js"></script>
   <script>
+    // 手機影片自動播放備援
+    const heroVideo = document.getElementById('heroVideo');
+    if (heroVideo) {
+      heroVideo.play().catch(() => {
+        // 如果自動播放失敗，嘗試在使用者互動時播放
+        document.addEventListener('touchstart', function playOnTouch() {
+          heroVideo.play();
+          document.removeEventListener('touchstart', playOnTouch);
+        }, { once: true });
+      });
+    }
+
     // 練習：點擊顯示 HTML overlay
     const practiceOverlay = document.getElementById('practiceOverlay');
 
