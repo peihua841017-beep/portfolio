@@ -140,6 +140,19 @@
   margin-top: 3rem;
 }
 
+/* ===== 分段：進入第二段落 ===== */
+.work-part-two {
+  margin-top: 12rem;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1.6s ease-out, transform 1.6s ease-out;
+}
+
+.work-part-two.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 /* ===== 後記 ===== */
 .work-postscript {
   margin-top: 4rem;

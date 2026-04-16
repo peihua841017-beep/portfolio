@@ -48,6 +48,7 @@
 
       <img src="images/works/lamp.jpg" alt="" style="display: block; max-width: 280px; width: 100%; margin-left: auto; margin-right: 0; margin-top: 2rem;">
 
+      <div class="work-part-two">
       <div class="work-quote" data-zh="進入樹林，黑暗之中感覺邊界消融了，弱化的視覺感官依舊存在，蟲鳴和森林的氣味，眼睛被重新包裹在身體裡。聲音傳來，在黑暗的樹林裡看不見聲音的來源，電吉它的聲響轉向如浪一般的耳鳴噪音，引擎聲，從身體到觀眾──觀眾出現了，眼前的大片光束，一輛不知名的卡車開了進來，吉它的聲響停止，車燈的光束像偶然在路上瞥見的景像或某個曾見過的電影場景──看到的是創造的畫面，用於記憶；卡車駛離樹林，搖晃的路還有風，留存在身體。（作品文字描述紀錄）" data-en="Entering the forest, darkness dissolves boundaries. Vision weakens but persists; insects, wind, and smell emerge. Sound arrives without visible source. The electric guitar shifts into a wave-like tinnitus, merging with the sound of an engine as it moves toward the audience. A beam of light cuts through the darkness: a truck enters. The guitar stops. The headlights resemble a fleeting image—like something once seen in a film—an image being formed for memory. The truck departs; the shaking road and wind remain in the body. (Excerpt from work description)">
         <p>進入樹林，黑暗之中感覺邊界消融了，弱化的視覺感官依舊存在，蟲鳴和森林的氣味，眼睛被重新包裹在身體裡。聲音傳來，在黑暗的樹林裡看不見聲音的來源，電吉它的聲響轉向如浪一般的耳鳴噪音，引擎聲，從身體到觀眾──觀眾出現了，眼前的大片光束，一輛不知名的卡車開了進來，吉它的聲響停止，車燈的光束像偶然在路上瞥見的景像或某個曾見過的電影場景──看到的是創造的畫面，用於記憶；卡車駛離樹林，搖晃的路還有風，留存在身體。（作品文字描述紀錄）</p>
       </div>
@@ -73,6 +74,7 @@ Through this transition—from slow immersion to sudden departure—the duration
 
       <div class="work-closing" data-zh="在這裡，夜晚變成了一種隨著體驗而消逝的東西─一段悄然流逝的記憶。" data-en="Here, the night becomes something that fades as it is experienced—a memory quietly slipping away.">
         <p>在這裡，夜晚變成了一種隨著體驗而消逝的東西─一段悄然流逝的記憶。</p>
+      </div>
       </div>
     </div>
 
@@ -114,6 +116,20 @@ Through this transition—from slow immersion to sudden departure—the duration
       iconPlay.style.display = 'block';
       iconPause.style.display = 'none';
     });
+
+    // 第二段落：捲動到視野內淡入
+    const partTwo = document.querySelector('.work-part-two');
+    if (partTwo) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            partTwo.classList.add('visible');
+            observer.unobserve(partTwo);
+          }
+        });
+      }, { threshold: 0.15 });
+      observer.observe(partTwo);
+    }
   </script>
 </body>
 </html>
