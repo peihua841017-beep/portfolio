@@ -142,7 +142,7 @@
 
 /* ===== 分段：進入第二段落 ===== */
 .work-part-two {
-  margin-top: 12rem;
+  margin-top: 9rem;
   opacity: 0;
   transform: translateY(20px);
   transition: opacity 1.6s ease-out, transform 1.6s ease-out;
