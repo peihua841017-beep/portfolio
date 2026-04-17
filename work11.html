@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yesterday, fly me to the moon | Pei Hua</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/work-detail.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400&family=Noto+Sans+TC:wght@300;400&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <header class="detail-header">
+    <a href="index.html" class="back-link" id="backToWorks">&larr;</a>
+    <button class="lang-toggle" id="langToggleDetail">EN</button>
+  </header>
+
+  <main class="work-detail">
+    <!-- 1. 主圖影片 -->
+    <div class="work-hero">
+      <div style="position: relative; width: 100%; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+        <iframe src="https://www.youtube.com/embed/nwQVbZFL8w0" title="Yesterday, fly me to the moon" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+      </div>
+    </div>
+
+    <!-- 2. 作品資訊 -->
+    <div class="work-info">
+      <h1 data-zh="Yesterday, fly me to the moon" data-en="Yesterday, fly me to the moon">Yesterday, fly me to the moon</h1>
+      <p class="work-meta"><span data-zh="聲音裝置" data-en="Sound installation">聲音裝置</span>, <span>2021</span></p>
+      <p class="work-meta" style="margin-top: 0.3rem;"><span data-zh="葉日檸、蔡沛樺共同製作" data-en="Co-created with Yeh Jih-Ning">葉日檸、蔡沛樺共同製作</span></p>
+    </div>
+
+    <!-- 3. 作品描述 -->
+    <div class="work-description">
+      <div data-zh="燕子常見於人類居所的屋簷結構下築巢，並隨著時序更迭進行游牧與遷徙，然而關於燕子的飛行路徑與記憶方式，至今雖有許多研究，但依然成謎。透過模擬巢穴的造型，製造出不同尋常的比例，展開對未知的生物、洞穴的想像。一個關於聲音的洞穴/巢穴，突發的噪音或是荒野的聲響交織錯落於現場，聲響與現場環境音交疊、互動，試圖牽引觀眾的身體感穿梭至錯置的時空場域，在聲響的中斷時刻能夠意識到經驗的當下。" data-en="Swallows commonly build their nests beneath the eaves of human dwellings, migrating and roaming with the shifting seasons. Yet despite extensive research, their flight paths and modes of memory remain a mystery. By simulating the form of a nest at an unusual scale, the work opens up imaginings of unknown creatures and caverns. A cave/nest of sound: sudden bursts of noise and sounds of the wilderness interlace throughout the space, overlapping and interacting with the ambient sounds of the site. The work attempts to draw the audience's bodily sense into a dislocated field of time and space, so that in the moments when sound breaks off, one becomes aware of the present as it is being experienced.">
+        <p>燕子常見於人類居所的屋簷結構下築巢，並隨著時序更迭進行游牧與遷徙，然而關於燕子的飛行路徑與記憶方式，至今雖有許多研究，但依然成謎。透過模擬巢穴的造型，製造出不同尋常的比例，展開對未知的生物、洞穴的想像。一個關於聲音的洞穴/巢穴，突發的噪音或是荒野的聲響交織錯落於現場，聲響與現場環境音交疊、互動，試圖牽引觀眾的身體感穿梭至錯置的時空場域，在聲響的中斷時刻能夠意識到經驗的當下。</p>
+      </div>
+    </div>
+
+    <!-- 4. 圖片輪播 -->
+    <div class="carousel" id="galleryCarousel" style="margin-top: 3rem;">
+      <div class="carousel-track" id="galleryTrack">
+        <img src="images/works/work11-thumb.jpg" alt="Yesterday 1" class="carousel-slide">
+        <img src="images/works/work11-1.jpg" alt="Yesterday 2" class="carousel-slide">
+        <img src="images/works/work11-2.jpg" alt="Yesterday 3" class="carousel-slide">
+      </div>
+      <button class="carousel-arrow carousel-prev" id="galleryPrev">&lsaquo;</button>
+      <button class="carousel-arrow carousel-next" id="galleryNext">&rsaquo;</button>
+    </div>
+  </main>
+
+  <!-- 全螢幕圖片檢視 -->
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-close" id="lightboxClose">&times;</button>
+    <img src="" alt="" id="lightboxImg">
+  </div>
+
+  <script src="js/main.js"></script>
+  <script>
+    document.getElementById('backToWorks').addEventListener('click', function(e) {
+      e.preventDefault();
+      window.location.href = 'index.html?page=works';
+    });
+
+    // ===== 通用輪播函式 =====
+    function setupCarousel(carouselId, trackId, prevId, nextId) {
+      const carousel = document.getElementById(carouselId);
+      const track = document.getElementById(trackId);
+      const slides = track.querySelectorAll('.carousel-slide');
+      const prevBtn = document.getElementById(prevId);
+      const nextBtn = document.getElementById(nextId);
+      let currentSlide = 0;
+
+      function goToSlide(index) {
+        currentSlide = index;
+        track.style.transform = `translateX(-${currentSlide * 100}%)`;
+        prevBtn.style.opacity = currentSlide === 0 ? '0' : '';
+        prevBtn.style.pointerEvents = currentSlide === 0 ? 'none' : '';
+        nextBtn.style.opacity = currentSlide === slides.length - 1 ? '0' : '';
+        nextBtn.style.pointerEvents = currentSlide === slides.length - 1 ? 'none' : '';
+      }
+
+      prevBtn.addEventListener('click', () => {
+        if (currentSlide > 0) goToSlide(currentSlide - 1);
+      });
+
+      nextBtn.addEventListener('click', () => {
+        if (currentSlide < slides.length - 1) goToSlide(currentSlide + 1);
+      });
+
+      goToSlide(0);
+
+      // 觸控滑動
+      let touchStartX = 0;
+      carousel.addEventListener('touchstart', (e) => {
+        touchStartX = e.touches[0].clientX;
+      });
+
+      carousel.addEventListener('touchend', (e) => {
+        const diff = touchStartX - e.changedTouches[0].clientX;
+        if (Math.abs(diff) > 50) {
+          if (diff > 0 && currentSlide < slides.length - 1) goToSlide(currentSlide + 1);
+          else if (diff < 0 && currentSlide > 0) goToSlide(currentSlide - 1);
+        }
+      });
+    }
+
+    setupCarousel('galleryCarousel', 'galleryTrack', 'galleryPrev', 'galleryNext');
+
+    // ===== 點擊圖片放大 =====
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightboxImg');
+
+    document.querySelectorAll('.carousel-slide').forEach(img => {
+      img.style.cursor = 'pointer';
+      img.addEventListener('click', () => {
+        lightboxImg.src = img.src;
+        lightbox.classList.add('active');
+      });
+    });
+
+    document.getElementById('lightboxClose').addEventListener('click', () => {
+      lightbox.classList.remove('active');
+    });
+
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) lightbox.classList.remove('active');
+    });
+  </script>
+</body>
+</html>
