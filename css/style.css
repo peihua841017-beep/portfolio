@@ -219,8 +219,9 @@ img {
 .constellation-inner {
   position: relative;
   width: 115%;
-  height: 130%;
+  min-height: 130%;
   padding-top: 2rem;
+  padding-bottom: 5em;
 }
 
 .star {
