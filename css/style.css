@@ -73,6 +73,7 @@ img {
   font-weight: 400;
   letter-spacing: 0.2em;
   text-decoration: none;
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.6), 0 0 20px rgba(255, 255, 255, 0.3);
   opacity: 0;
   pointer-events: none;
   transition: opacity 2s ease-in-out;
@@ -219,9 +220,8 @@ img {
 .constellation-inner {
   position: relative;
   width: 115%;
-  min-height: 130%;
+  min-height: 190%;
   padding-top: 2rem;
-  padding-bottom: 5em;
 }
 
 .star {
