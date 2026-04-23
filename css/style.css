@@ -443,6 +443,13 @@ img {
   border-color: var(--text);
 }
 
+/* ===== 桌面星圖個別星星尺寸微調 ===== */
+@media (min-width: 769px) {
+  .star:nth-child(2) img { max-width: 198px; }
+  .star:nth-child(5) img { max-width: 220px; }
+  .star:nth-child(6) img { max-width: 218px; }
+}
+
 /* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
   .hero-nav {
