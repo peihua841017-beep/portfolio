@@ -503,14 +503,47 @@ img {
     white-space: normal;
   }
 
-  /* 星圖：手機把容器拉寬 + 縮小星星，避免重疊 */
+  /* 星圖：手機改為不規則網格（2 小 + 1 大 循環） */
+  .constellation {
+    height: auto;
+    overflow: visible;
+    cursor: default;
+  }
+
   .constellation-inner {
-    width: 250%;
-    min-height: 190%;
+    width: 100%;
+    min-height: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.25rem;
+    padding: 0;
+  }
+
+  .star {
+    position: static;
+    transform: none;
+    width: 100%;
+  }
+
+  .star:hover {
+    transform: none;
+  }
+
+  /* 每 3 個中的第 3 個橫跨整排 */
+  .star:nth-child(3n) {
+    grid-column: 1 / -1;
   }
 
   .star img {
-    max-width: 100px;
+    max-width: 100%;
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    opacity: 1;
+  }
+
+  .star:nth-child(3n) img {
+    height: 280px;
   }
 
   /* 隨筆 */
