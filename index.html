@@ -24,26 +24,24 @@
     <nav class="hero-nav">
       <div class="nav-left"></div>
       <div class="nav-right">
-        <a href="#" class="nav-link hero-desktop-link" data-page="about" data-zh="關於" data-en="About">關於</a>
+        <a href="#" class="nav-link" data-page="about" data-zh="關於" data-en="About">關於</a>
         <button class="lang-toggle" id="langToggle">EN</button>
-        <button class="hero-menu-toggle" id="heroMenuToggle" aria-label="Menu">
-          <span></span><span></span><span></span>
-        </button>
       </div>
     </nav>
 
     <div class="hero-copyright">© Tsai Pei Hua</div>
   </section>
 
-  <!-- ===== HERO MENU OVERLAY ===== -->
-  <div class="hero-menu" id="heroMenu">
-    <button class="hero-menu-close" id="heroMenuClose">&times;</button>
-    <ul class="hero-menu-list">
+  <!-- ===== 內頁漢堡選單 OVERLAY（手機版） ===== -->
+  <div class="section-menu" id="sectionMenu">
+    <button class="section-menu-close" id="sectionMenuClose">&times;</button>
+    <ul class="section-menu-list">
       <li><a href="#" class="nav-link" data-page="works" data-zh="路徑" data-en="Path">路徑</a></li>
       <li><a href="#" class="nav-link" data-page="texts" data-zh="隨筆" data-en="Fragments">隨筆</a></li>
       <li><a href="#" class="nav-link practice-link" data-zh="練習" data-en="ongoing practice">練習</a></li>
       <li><a href="#" class="nav-link" data-page="about" data-zh="關於" data-en="About">關於</a></li>
     </ul>
+    <button class="lang-toggle section-menu-lang">EN</button>
   </div>
 
   <!-- ===== WORKS / 作品 ===== -->
@@ -56,6 +54,9 @@
         <a class="nav-link" data-page="about" data-zh="關於" data-en="About">關於</a>
         <button class="lang-toggle">EN</button>
       </nav>
+      <button class="section-menu-toggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
     </header>
 
     <div class="constellation" id="constellation">
@@ -135,6 +136,9 @@
         <a class="nav-link" data-page="about" data-zh="關於" data-en="About">關於</a>
       </nav>
       <button class="lang-toggle">EN</button>
+      <button class="section-menu-toggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
     </header>
 
     <!-- 圖片列表 -->
@@ -192,6 +196,9 @@
         <a class="nav-link active" data-page="about" data-zh="關於" data-en="About">關於</a>
       </nav>
       <button class="lang-toggle">EN</button>
+      <button class="section-menu-toggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
     </header>
 
     <div class="about-content" style="display: flex; gap: 4rem; max-width: 1100px; margin: 0 auto; text-align: left;">
@@ -352,15 +359,16 @@
       });
     }
 
-    // ===== 首頁漢堡選單 =====
-    const heroMenu = document.getElementById('heroMenu');
-    const heroMenuToggle = document.getElementById('heroMenuToggle');
-    const heroMenuClose = document.getElementById('heroMenuClose');
+    // ===== 內頁漢堡選單（手機版） =====
+    const sectionMenu = document.getElementById('sectionMenu');
+    const sectionMenuClose = document.getElementById('sectionMenuClose');
 
-    heroMenuToggle.addEventListener('click', () => heroMenu.classList.add('active'));
-    heroMenuClose.addEventListener('click', () => heroMenu.classList.remove('active'));
-    heroMenu.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => heroMenu.classList.remove('active'));
+    document.querySelectorAll('.section-menu-toggle').forEach(btn => {
+      btn.addEventListener('click', () => sectionMenu.classList.add('active'));
+    });
+    sectionMenuClose.addEventListener('click', () => sectionMenu.classList.remove('active'));
+    sectionMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => sectionMenu.classList.remove('active'));
     });
 
     // 練習：點擊顯示 HTML overlay

@@ -152,8 +152,8 @@ img {
   color: #000;
 }
 
-/* ===== HERO 漢堡選單（僅手機顯示）===== */
-.hero-menu-toggle {
+/* ===== 內頁漢堡選單（僅手機顯示）===== */
+.section-menu-toggle {
   display: none;
   background: none;
   border: none;
@@ -162,75 +162,80 @@ img {
   flex-direction: column;
   justify-content: center;
   gap: 5px;
-  width: 28px;
+  width: 26px;
 }
 
-.hero-menu-toggle span {
+.section-menu-toggle span {
   display: block;
   width: 100%;
   height: 1.5px;
-  background: #fff;
+  background: var(--text);
   transition: opacity var(--transition);
 }
 
-.hero-menu-toggle:hover span {
+.section-menu-toggle:hover span {
   opacity: 0.6;
 }
 
-.hero-menu {
+.section-menu {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.92);
+  background: rgba(245, 243, 240, 0.97);
   z-index: 50;
   display: none;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   backdrop-filter: blur(4px);
 }
 
-.hero-menu.active {
+.section-menu.active {
   display: flex;
-  animation: fadeIn 0.4s ease-out;
+  animation: fadeIn 0.3s ease-out;
 }
 
-.hero-menu-close {
+.section-menu-close {
   position: absolute;
-  top: 1.8rem;
-  right: 2.5rem;
+  top: 1.5rem;
+  right: 1.8rem;
   background: none;
   border: none;
-  color: #fff;
-  font-size: 2rem;
+  color: var(--text);
+  font-size: 1.8rem;
   cursor: pointer;
   opacity: 0.7;
   transition: opacity var(--transition);
 }
 
-.hero-menu-close:hover {
+.section-menu-close:hover {
   opacity: 1;
 }
 
-.hero-menu-list {
+.section-menu-list {
   text-align: center;
 }
 
-.hero-menu-list li {
+.section-menu-list li {
   margin-bottom: 1.8rem;
 }
 
-.hero-menu-list a {
-  color: #fff;
+.section-menu-list a {
+  color: var(--text);
   font-size: 1.1rem;
   letter-spacing: 0.15em;
   font-weight: 300;
   transition: opacity var(--transition);
 }
 
-.hero-menu-list a:hover {
+.section-menu-list a:hover {
   opacity: 0.6;
+}
+
+.section-menu-lang {
+  margin-top: 2rem;
 }
 
 /* ===== SECTION COMMON ===== */
@@ -551,12 +556,13 @@ img {
     font-size: 0.8rem;
   }
 
-  /* 手機隱藏桌面用的「關於」連結，顯示漢堡選單 */
-  .hero-desktop-link {
+  /* 手機內頁：隱藏 section-nav 與 lang-toggle，顯示漢堡選單 */
+  .section-header .section-nav,
+  .section-header > .lang-toggle {
     display: none;
   }
 
-  .hero-menu-toggle {
+  .section-menu-toggle {
     display: flex;
   }
 
