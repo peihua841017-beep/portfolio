@@ -503,6 +503,16 @@ img {
     white-space: normal;
   }
 
+  /* 星圖：手機把容器拉寬 + 縮小星星，避免重疊 */
+  .constellation-inner {
+    width: 250%;
+    min-height: 190%;
+  }
+
+  .star img {
+    max-width: 100px;
+  }
+
   /* 隨筆 */
   .fragments-list {
     gap: 4rem;
