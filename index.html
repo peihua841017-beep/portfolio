@@ -24,13 +24,27 @@
     <nav class="hero-nav">
       <div class="nav-left"></div>
       <div class="nav-right">
-        <a href="#" class="nav-link" data-page="about" data-zh="關於" data-en="About">關於</a>
+        <a href="#" class="nav-link hero-desktop-link" data-page="about" data-zh="關於" data-en="About">關於</a>
         <button class="lang-toggle" id="langToggle">EN</button>
+        <button class="hero-menu-toggle" id="heroMenuToggle" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
       </div>
     </nav>
 
     <div class="hero-copyright">© Tsai Pei Hua</div>
   </section>
+
+  <!-- ===== HERO MENU OVERLAY ===== -->
+  <div class="hero-menu" id="heroMenu">
+    <button class="hero-menu-close" id="heroMenuClose">&times;</button>
+    <ul class="hero-menu-list">
+      <li><a href="#" class="nav-link" data-page="works" data-zh="路徑" data-en="Path">路徑</a></li>
+      <li><a href="#" class="nav-link" data-page="texts" data-zh="隨筆" data-en="Fragments">隨筆</a></li>
+      <li><a href="#" class="nav-link practice-link" data-zh="練習" data-en="ongoing practice">練習</a></li>
+      <li><a href="#" class="nav-link" data-page="about" data-zh="關於" data-en="About">關於</a></li>
+    </ul>
+  </div>
 
   <!-- ===== WORKS / 作品 ===== -->
   <section id="works" class="page-section" hidden>
@@ -56,9 +70,9 @@
           <span class="star-title" data-zh="" data-en="Elsewhere"></span>
         </a>
 
-        <a href="work3.html" class="star" style="--x: 72; --y: 32;">
-          <img src="images/works/work3-thumb.jpg.jpg" alt="作品三">
-          <span class="star-title" data-zh="" data-en="I put a mimicry pet in the woods..."></span>
+        <a href="work5.html" class="star" style="--x: 36; --y: 57;">
+          <img src="images/works/work5-thumb.jpg.jpg" alt="作品五">
+          <span class="star-title" data-zh="" data-en="Nighttime Forest"></span>
         </a>
 
         <a href="work4.html" class="star" style="--x: 10; --y: 54;">
@@ -66,9 +80,9 @@
           <span class="star-title" data-zh="" data-en="Puzzle"></span>
         </a>
 
-        <a href="work5.html" class="star" style="--x: 36; --y: 57;">
-          <img src="images/works/work5-thumb.jpg.jpg" alt="作品五">
-          <span class="star-title" data-zh="" data-en="Nighttime Forest"></span>
+        <a href="work3.html" class="star" style="--x: 72; --y: 32;">
+          <img src="images/works/work3-thumb.jpg.jpg" alt="作品三">
+          <span class="star-title" data-zh="" data-en="I put a mimicry pet in the woods..."></span>
         </a>
 
         <a href="work6.html" class="star" style="--x: 58; --y: 76;">
@@ -337,6 +351,17 @@
         }, { once: true });
       });
     }
+
+    // ===== 首頁漢堡選單 =====
+    const heroMenu = document.getElementById('heroMenu');
+    const heroMenuToggle = document.getElementById('heroMenuToggle');
+    const heroMenuClose = document.getElementById('heroMenuClose');
+
+    heroMenuToggle.addEventListener('click', () => heroMenu.classList.add('active'));
+    heroMenuClose.addEventListener('click', () => heroMenu.classList.remove('active'));
+    heroMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => heroMenu.classList.remove('active'));
+    });
 
     // 練習：點擊顯示 HTML overlay
     const practiceOverlay = document.getElementById('practiceOverlay');
