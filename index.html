@@ -201,16 +201,16 @@
       </button>
     </header>
 
-    <div class="about-content" style="display: flex; gap: 4rem; max-width: 1100px; margin: 0 auto; text-align: left;">
-      <!-- 左欄：照片 + 創作自述 -->
-      <div class="about-left" style="flex: 1; min-width: 0;">
+    <div class="about-content" style="max-width: 700px; margin: 0 auto; text-align: left;">
+      <!-- 上：照片 + 創作自述 -->
+      <div class="about-left">
         <!-- 照片 -->
         <div class="about-block">
           <img src="images/IMG.jpg" alt="Tsai Pei Hua" style="max-width: 350px; width: 100%; display: block; margin: 0 auto;">
         </div>
 
         <!-- Artist Statement -->
-        <div class="about-block" style="max-width: 450px; margin: 0 auto;">
+        <div class="about-block" style="max-width: 550px; margin: 0 auto;">
           <div class="about-text" data-zh="我的創作時常從不期而遇的經驗開始，也來自於對環境的觀察與感受，並沿著偶然浮現的線索展開。它可能是空間中一扇被打開的門、脆弱的東西、一段記憶、一段獨白或一群人在夜裡散步。" data-en="My work often begins with unexpected encounters and arises from observations of, and a sensitivity to, the environment, unfolding along threads that emerge by chance. It can be an opened door within a space, something fragile, a memory, a monologue, or a group of people walking at night.">
             <p>我的創作時常從不期而遇的經驗開始，也來自於對環境的觀察與感受，並沿著偶然浮現的線索展開。它可能是空間中一扇被打開的門、脆弱的東西、一段記憶、一段獨白或一群人在夜裡散步。</p>
           </div>
@@ -220,16 +220,35 @@
           <div class="about-text" style="margin-top: 1.5rem;" data-zh="我嘗試環抱，生命賜予的一切。" data-en="I try to embrace, remaining close to what life offers.">
             <p>我嘗試環抱，生命賜予的一切。</p>
           </div>
+
+          <!-- CV 觸發 -->
+          <p style="text-align: right; margin-top: 3rem;">
+            <a href="#" id="cvTrigger" style="font-size: 0.85rem; color: var(--text-light); border-bottom: 1px solid var(--text-light); cursor: pointer;">CV</a>
+          </p>
         </div>
       </div>
 
-      <!-- 右欄：CV + 聯絡 -->
-      <div class="about-right" style="flex: 1; padding-top: 3rem; padding-left: 1rem;">
+      <!-- 下：聯絡 -->
+      <div class="about-right" style="max-width: 550px; margin: 5rem auto 0;">
+        <!-- Contact -->
         <div class="about-block">
-          <p style="margin-bottom: 2rem; color: var(--text);"><strong style="font-size: 1.1rem;">蔡沛樺 Tsai, Pei Hua</strong><br><span style="font-size: 0.85rem;">臺灣，1995 / Taiwan, 1995</span></p>
+          <h3 data-zh="聯絡" data-en="Contact" style="color: var(--text);">聯絡</h3>
+          <div class="contact-info">
+            <p>Email: <a href="mailto:peihua841017@gmail.com">peihua841017@gmail.com</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-          <div style="font-size: 0.65rem; color: var(--text-light);">
-          <div class="cv-section">
+  <!-- ===== CV overlay ===== -->
+  <div id="cvOverlay" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:var(--bg); z-index:100; overflow-y:auto;">
+    <button id="cvClose" style="position:fixed; top:2rem; right:3rem; background:none; border:none; font-size:1.5rem; cursor:pointer; color:var(--text); z-index:101;">&times;</button>
+    <div style="max-width: 700px; margin: 0 auto; padding: 6rem 3rem 4rem;">
+      <p style="margin-bottom: 2rem; color: var(--text);"><strong style="font-size: 1.1rem;">蔡沛樺 Tsai, Pei Hua</strong><br><span style="font-size: 0.85rem;">臺灣，1995 / Taiwan, 1995</span></p>
+
+      <div style="font-size: 0.75rem; color: var(--text-light);">
+        <div class="cv-section">
             <h4 data-zh="個展" data-en="Solo Exhibition">個展</h4>
             <ul>
               <li>
@@ -317,18 +336,8 @@
             </ul>
           </div>
         </div>
-        </div>
-
-        <!-- Contact -->
-        <div class="about-block" style="margin-top: 2rem;">
-          <h3 data-zh="聯絡" data-en="Contact" style="color: var(--text);">聯絡</h3>
-          <div class="contact-info">
-            <p>Email: <a href="mailto:peihua841017@gmail.com">peihua841017@gmail.com</a></p>
-          </div>
-        </div>
       </div>
     </div>
-  </section>
 
   <!-- 練習 overlay -->
   <div id="practiceOverlay" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:var(--bg); z-index:100; overflow-y:auto;">
@@ -382,6 +391,17 @@
 
     document.getElementById('practiceClose').addEventListener('click', () => {
       practiceOverlay.style.display = 'none';
+    });
+
+    // CV overlay
+    const cvOverlay = document.getElementById('cvOverlay');
+    document.getElementById('cvTrigger').addEventListener('click', (e) => {
+      e.preventDefault();
+      cvOverlay.style.display = 'block';
+      setLanguage(currentLang);
+    });
+    document.getElementById('cvClose').addEventListener('click', () => {
+      cvOverlay.style.display = 'none';
     });
 
     // ===== 隨筆：點擊行為 =====
