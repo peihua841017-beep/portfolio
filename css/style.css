@@ -602,6 +602,11 @@ img {
     max-width: 250px !important;
   }
 
+  /* 手機版自述字體縮小 */
+  .about-text p {
+    font-size: 0.85rem;
+  }
+
   .cv-section ul li {
     flex-direction: column;
     gap: 0.2rem;
