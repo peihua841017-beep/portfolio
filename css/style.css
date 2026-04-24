@@ -535,6 +535,7 @@ img {
   .star:nth-child(3) img { max-width: 240px; }
   .star:nth-child(6) img { max-width: 238px; }
   .star:nth-child(8) img { max-width: 225px; }
+  .star:nth-child(9) img { max-width: 222px; }
 }
 
 /* ===== RESPONSIVE ===== */
