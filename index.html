@@ -372,6 +372,15 @@
       <p style="margin-bottom:3rem; font-size:0.95rem; line-height:2;" data-zh="在觀察與停留中，事物之間的關係隨時間慢慢浮現。" data-en="Through observation and lingering, the relationships between things slowly reveal themselves over time.">在觀察與停留中，事物之間的關係隨時間慢慢浮現。</p>
       <img src="images/flower.JPG" alt="" style="display:block; max-width:280px; width:100%; margin-left:auto; margin-right:1rem; margin-top:7.5rem;">
     </div>
+    <button id="practiceImageTrigger" style="position:fixed; right:2.5rem; top:50%; transform:translateY(-50%); background:none; border:none; font-size:2rem; cursor:pointer; color:var(--text); opacity:0.5; padding:0.5rem; z-index:101;">&rsaquo;</button>
+  </div>
+
+  <!-- 練習圖片 1-5 全螢幕瀏覽 -->
+  <div id="practiceImageViewer" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.92); z-index:110; justify-content:center; align-items:center;">
+    <button id="practiceViewerClose" style="position:fixed; top:1.5rem; right:2rem; background:none; border:none; font-size:2rem; cursor:pointer; color:#fff; opacity:0.7; z-index:111;">&times;</button>
+    <button id="practiceViewerPrev" style="position:fixed; top:50%; left:2rem; transform:translateY(-50%); background:none; border:none; font-size:2rem; cursor:pointer; color:#fff; opacity:0.7; padding:1rem; z-index:111;">&lsaquo;</button>
+    <button id="practiceViewerNext" style="position:fixed; top:50%; right:2rem; transform:translateY(-50%); background:none; border:none; font-size:2rem; cursor:pointer; color:#fff; opacity:0.7; padding:1rem; z-index:111;">&rsaquo;</button>
+    <img id="practiceViewerImg" src="images/1.JPG" alt="" style="max-width:90%; max-height:90vh; object-fit:contain;">
   </div>
 
   <script src="js/main.js"></script>
@@ -414,6 +423,33 @@
 
     document.getElementById('practiceClose').addEventListener('click', () => {
       practiceOverlay.style.display = 'none';
+    });
+
+    // 練習圖片 1-5 全螢幕瀏覽
+    const practiceImages = ['images/1.JPG', 'images/2.JPG', 'images/3.JPG', 'images/4.JPG', 'images/5.JPG'];
+    let practiceIndex = 0;
+    const practiceImageViewer = document.getElementById('practiceImageViewer');
+    const practiceViewerImg = document.getElementById('practiceViewerImg');
+
+    function updatePracticeViewer() {
+      practiceViewerImg.src = practiceImages[practiceIndex];
+    }
+
+    document.getElementById('practiceImageTrigger').addEventListener('click', () => {
+      practiceIndex = 0;
+      updatePracticeViewer();
+      practiceImageViewer.style.display = 'flex';
+    });
+    document.getElementById('practiceViewerClose').addEventListener('click', () => {
+      practiceImageViewer.style.display = 'none';
+    });
+    document.getElementById('practiceViewerPrev').addEventListener('click', () => {
+      practiceIndex = (practiceIndex - 1 + practiceImages.length) % practiceImages.length;
+      updatePracticeViewer();
+    });
+    document.getElementById('practiceViewerNext').addEventListener('click', () => {
+      practiceIndex = (practiceIndex + 1) % practiceImages.length;
+      updatePracticeViewer();
     });
 
     // CV overlay
