@@ -143,6 +143,9 @@
 
     <!-- 圖片列表 -->
     <div class="fragments-list">
+      <div class="fragment-item" data-action="overlay" data-target="fragment4Overlay">
+        <img src="images/隨筆圖片/8.jpg" alt="">
+      </div>
       <div class="fragment-item" data-action="overlay" data-target="fragment1Overlay">
         <img src="images/隨筆圖片/7.JPG" alt="">
       </div>
@@ -190,6 +193,17 @@
       <div style="max-width:600px; margin:0 auto; padding:5rem 2rem; text-align:center;">
         <img src="images/隨筆圖片/1.jpg" alt="" style="max-width:100%;">
         <p style="margin-top:0.8rem; font-size:0.8rem; color:var(--text-light);" data-zh="修理鞋子" data-en="repair shoes">修理鞋子</p>
+      </div>
+    </div>
+
+    <!-- 圖8 overlay（含 8 / 8-1 / 8-2 切換） -->
+    <div class="fragment-overlay" id="fragment4Overlay" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:var(--bg); z-index:100; overflow-y:auto;">
+      <button class="fragment-overlay-close" onclick="document.getElementById('fragment4Overlay').style.display='none'" style="position:fixed; top:2rem; right:3rem; background:none; border:none; font-size:1.5rem; cursor:pointer; color:var(--text); z-index:101;">&times;</button>
+      <button id="fragment4Prev" style="position:fixed; top:50%; left:2rem; transform:translateY(-50%); background:none; border:none; font-size:2rem; cursor:pointer; color:var(--text); opacity:0.6; padding:1rem; z-index:101;">&lsaquo;</button>
+      <button id="fragment4Next" style="position:fixed; top:50%; right:2rem; transform:translateY(-50%); background:none; border:none; font-size:2rem; cursor:pointer; color:var(--text); opacity:0.6; padding:1rem; z-index:101;">&rsaquo;</button>
+      <div style="max-width:600px; margin:0 auto; padding:5rem 2rem; text-align:center;">
+        <img src="images/隨筆圖片/8.jpg" alt="" id="fragment4Img" style="max-width:100%;">
+        <div id="fragment4Caption" style="margin-top:0.8rem; font-size:0.8rem; color:var(--text-light); line-height:1.8;">another language</div>
       </div>
     </div>
   </section>
@@ -435,6 +449,36 @@
 
     document.getElementById('fragmentViewerClose').addEventListener('click', () => {
       fragmentViewer.classList.remove('active');
+    });
+
+    // 圖8 overlay 切換
+    const fragment4Images = ['images/隨筆圖片/8.jpg', 'images/隨筆圖片/8-1.jpg', 'images/隨筆圖片/8-2.jpg'];
+    const fragment4Captions = [
+      'another language',
+      '',
+      "The Story of Kewpie Dolls (KEWPIE).<br><br>In 1909, they were created by the American illustrator Ms. Rose O'Neill for a women's magazine. In 1912, after being made into porcelain dolls in Germany, they became mascots for various products, such as mayonnaise, health foods, and others. They became very popular in the early 1920s. In later years, they were used as models for crocheted woolen sweaters.<br><br>Fun Fact: Kewpie is a stylized doll without a gender."
+    ];
+    let fragment4Index = 0;
+    const fragment4Img = document.getElementById('fragment4Img');
+    const fragment4Caption = document.getElementById('fragment4Caption');
+
+    function updateFragment4() {
+      fragment4Img.src = fragment4Images[fragment4Index];
+      fragment4Caption.innerHTML = fragment4Captions[fragment4Index];
+      fragment4Caption.style.textAlign = fragment4Index === 2 ? 'left' : 'center';
+    }
+
+    document.getElementById('fragment4Prev').addEventListener('click', () => {
+      fragment4Index = (fragment4Index - 1 + fragment4Images.length) % fragment4Images.length;
+      updateFragment4();
+    });
+    document.getElementById('fragment4Next').addEventListener('click', () => {
+      fragment4Index = (fragment4Index + 1) % fragment4Images.length;
+      updateFragment4();
+    });
+    document.querySelector('[data-target="fragment4Overlay"]').addEventListener('click', () => {
+      fragment4Index = 0;
+      updateFragment4();
     });
   </script>
 </body>
