@@ -37,8 +37,8 @@
     <button class="section-menu-close" id="sectionMenuClose">&times;</button>
     <ul class="section-menu-list">
       <li><a href="#" class="nav-link" data-page="works" data-zh="路徑" data-en="Path">路徑</a></li>
-      <li><a href="#" class="nav-link" data-page="texts" data-zh="隨筆" data-en="Fragments">隨筆</a></li>
       <li><a href="#" class="nav-link practice-link" data-zh="練習" data-en="ongoing practice">練習</a></li>
+      <li><a href="#" class="nav-link" data-page="texts" data-zh="隨筆" data-en="Fragments">隨筆</a></li>
       <li><a href="#" class="nav-link" data-page="about" data-zh="關於" data-en="About">關於</a></li>
     </ul>
     <button class="lang-toggle section-menu-lang">EN</button>
@@ -49,8 +49,8 @@
     <header class="section-header">
       <a href="#" class="back-home">&larr;</a>
       <nav class="section-nav">
-        <a class="nav-link" data-page="texts" data-zh="隨筆" data-en="Fragments">隨筆</a>
         <a class="nav-link practice-link" data-zh="練習" data-en="ongoing practice">練習</a>
+        <a class="nav-link" data-page="texts" data-zh="隨筆" data-en="Fragments">隨筆</a>
         <a class="nav-link" data-page="about" data-zh="關於" data-en="About">關於</a>
         <button class="lang-toggle">EN</button>
       </nav>
@@ -131,8 +131,8 @@
       <a href="#" class="back-home">&larr;</a>
       <nav class="section-nav">
         <a class="nav-link" data-page="works" data-zh="路徑" data-en="Path">路徑</a>
-        <a class="nav-link active" data-page="texts" data-zh="隨筆" data-en="Fragments">隨筆</a>
         <a class="nav-link practice-link" data-zh="練習" data-en="ongoing practice">練習</a>
+        <a class="nav-link active" data-page="texts" data-zh="隨筆" data-en="Fragments">隨筆</a>
         <a class="nav-link" data-page="about" data-zh="關於" data-en="About">關於</a>
       </nav>
       <button class="lang-toggle">EN</button>
@@ -214,8 +214,8 @@
       <a href="#" class="back-home">&larr;</a>
       <nav class="section-nav">
         <a class="nav-link" data-page="works" data-zh="路徑" data-en="Path">路徑</a>
-        <a class="nav-link" data-page="texts" data-zh="隨筆" data-en="Fragments">隨筆</a>
         <a class="nav-link practice-link" data-zh="練習" data-en="ongoing practice">練習</a>
+        <a class="nav-link" data-page="texts" data-zh="隨筆" data-en="Fragments">隨筆</a>
         <a class="nav-link active" data-page="about" data-zh="關於" data-en="About">關於</a>
       </nav>
       <button class="lang-toggle">EN</button>
@@ -229,7 +229,10 @@
       <div class="about-left">
         <!-- 照片 -->
         <div class="about-block">
-          <img src="images/IMG.jpg" alt="Tsai Pei Hua" style="max-width: 350px; width: 100%; display: block; margin: 0 auto;">
+          <div style="position: relative; max-width: 350px; margin: 0 auto;">
+            <img id="aboutPortrait" src="images/IMG.jpg" alt="Tsai Pei Hua" style="width: 100%; aspect-ratio: 1385 / 1066; object-fit: contain; display: block; transition: opacity 3s;">
+            <div id="aboutCaption" style="position: absolute; bottom: 8px; left: 0; right: 0; text-align: center; font-size: 0.7rem; color: #b5b5b5; transition: opacity 3s;"></div>
+          </div>
         </div>
 
         <!-- Artist Statement -->
@@ -451,6 +454,24 @@
       practiceIndex = (practiceIndex + 1) % practiceImages.length;
       updatePracticeViewer();
     });
+
+    // 關於頁面照片自動循環
+    const aboutImages = ['images/IMG.jpg', 'images/chocolate lipstick.jpg'];
+    const aboutCaptions = ['', 'Chocolate lipstick.'];
+    let aboutImgIndex = 0;
+    const aboutPortrait = document.getElementById('aboutPortrait');
+    const aboutCaption = document.getElementById('aboutCaption');
+    setInterval(() => {
+      aboutPortrait.style.opacity = '0';
+      aboutCaption.style.opacity = '0';
+      setTimeout(() => {
+        aboutImgIndex = (aboutImgIndex + 1) % aboutImages.length;
+        aboutPortrait.src = aboutImages[aboutImgIndex];
+        aboutCaption.textContent = aboutCaptions[aboutImgIndex];
+        aboutPortrait.style.opacity = '1';
+        aboutCaption.style.opacity = '1';
+      }, 3000);
+    }, 15000);
 
     // CV overlay
     const cvOverlay = document.getElementById('cvOverlay');
