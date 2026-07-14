@@ -600,6 +600,8 @@ img {
 
   .about-block img {
     max-width: 250px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
   }
 
   /* 手機版自述字體縮小 */
